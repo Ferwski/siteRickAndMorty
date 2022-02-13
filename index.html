@@ -6,32 +6,55 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="index.js"></script>
+    <link rel="stylesheet" href="pgPrincipal.css">
     <title>Site Rick and Morty API</title>
 </head>
 
 <body>
     <header>
+        <h1>Site Rick and Morty</h1>
 
     </header>
+    <div id="pesquisa">
+        <input id="id_personagem" type="text">
+        <input id="id_personagem2" type="text">
+        <button onclick="buscarPersonagem()">Buscar</button>
+    </div>
     <main>
         <div id="resultado_api">
-
+            <div id="imagens">
+                <img width="220px" id="img_personagem" src="" alt="">
+            </div>
+            <div id="content">
+                <div id="cabecalho">
+                    <h2 id="nome"></h2>
+                    <span id="status"></span>
+                    -
+                    <span id="species"></span>
+                    <li id="gender"></li>
+                </div>
+            </div>
+        </div>
+        <div id="resultado_api2">
+            <div id="imagens">
+                <img width="220px" id="img_personagem2" src="" alt="">
+            </div>
+            <div id="content2">
+                <div id="cabecalho2">
+                    <h2 id="nome2"></h2>
+                    <span id="status2"></span>
+                    -
+                    <span id="species2"></span>
+                    <li id="gender2"></li>
+                </div>
+            </div>
         </div>
     </main>
     <footer>
-
+        <div>Porto Alegre - RS, Brazil</div>
+        <div>Fernando - 2022 ® </div>
     </footer>
 </body>
 
 </html>
-
-<script>
-    $.ajax({
-        url: "https://rickandmortyapi.com/api/character/663",
-        type: "get",
-        success: function (result) {
-            const divResultado = document.getElementById("resultado_api")
-            divResultado.innerHTML = JSON.stringify(result)
-        }
-    });
-</script>
